@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Perpetuate — Discipline becomes identity. A premium self-development app that aligns daily habits with who you choose to be." />
+    <meta name="theme-color" content="#0a0f2b" />
+
+    <title>Perpetuate — Discipline becomes identity.</title>
+
+    <link rel="preload" href="./styles.css" as="style" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+    <script defer src="./app.js"></script>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs/%3E%3Cpath fill='%23B5C7FF' d='M28.5 5.2c2.8-1.2 6.2-.2 8 2.4 2 2.8 1.7 6.7-.7 9.2-1.5 1.6-3.4 2.4-5.5 2.5-2.9.1-5.8-1.5-7-4.3-1.5-3.6.2-7.8 3.9-9.8z'/%3E%3Cpath fill='%23A3B6FF' d='M43.3 22.2c-3-2.1-6.9-2.8-10.4-1.8-3.1.9-5.7 3.1-7.2 6-1.7 3.3-2.2 7.3-5 9.6-2.9 2.5-7.2 2.7-10.1.4-3-2.3-4-6.8-2.3-10.2C11.6 13.7 23.1 6.8 35.7 8.9c7.6 1.3 14.4 6.2 18.1 12.9 1.8 3.2.4 7.4-3 9-3 1.5-5.8-.3-7.5-2.6z'/%3E%3Cpath fill='%238FA2FF' d='M47.8 33.5c-2-2.9-5.5-4.6-9-4.2-3.7.5-6.5 3-8.8 5.8-2.4 2.9-4.5 6.3-7.9 7.8-3.2 1.4-7.2.5-9.3-2.4-2.5-3.3-1.6-8.4 1.7-10.8 7.5-5.5 18.3-7.2 27-.4 4 3 7 7.4 8.2 12.2.7 2.7-1.6 5.3-4.3 5.4-2.2.1-3.9-1.5-4.6-3.4z'/%3E%3C/svg%3E" />
+  </head>
+  <body>
+    <div class="page" id="page">
+      <header class="header" role="banner">
+        <a class="brand" href="#" aria-label="Perpetuate Home">
+          <span class="brand-mark" aria-hidden="true">
+            <!-- Minimal brand mark (P-infinity) -->
+            <svg width="28" height="28" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="g1" x1="0" x2="1" y1="1" y2="0">
+                  <stop offset="0%" stop-color="#4760FF" />
+                  <stop offset="100%" stop-color="#8AA1FF" />
+                </linearGradient>
+              </defs>
+              <path fill="url(#g1)" d="M24 10c9 0 18 6 18 16 0 8-6 14-16 14h-6v14h-8V10h12zm2 22c5 0 10-3 10-8s-5-8-10-8h-6v16h6z" />
+              <path fill="#B9C8FF" opacity="0.55" d="M38 30c0 6.627-5.373 12-12 12-3.338 0-6.352-1.37-8.5-3.574C20.61 34.7 26.2 32 32 32c2.08 0 4.09.3 6 .86V30z" />
+            </svg>
+          </span>
+          <span class="brand-name">Perpetuate</span>
+        </a>
+        <button class="info" id="infoButton" aria-expanded="false" aria-controls="whatIs">
+          <span class="info-icon" aria-hidden="true">i</span>
+          <span class="sr-only">What is Perpetuate</span>
+        </button>
+      </header>
+
+      <main class="hero" id="hero" role="main">
+        <div class="hero-content">
+          <p class="quote">“Small acts, repeated daily, write the story of who you become.”</p>
+          <h1 class="tagline">Discipline becomes identity.</h1>
+          <p class="pitch">Build consistent habits that turn into who you are. Perpetuate aligns disciplined action with your chosen identity — beautifully, simply, and sustainably.</p>
+
+          <div class="device">
+            <div class="device-body" id="device">
+              <div class="notch"></div>
+              <div class="screen">
+                <div class="screen-gradient" id="screenGradient"></div>
+                <div class="screen-overlay"></div>
+                <div class="screen-ui" role="group" aria-label="Early access and downloads">
+                  <span class="overline">Early access</span>
+                  <form id="earlyAccessForm" class="email-form email-form--stack" method="post" novalidate aria-labelledby="earlyAccessLabel">
+                    <span id="earlyAccessLabel" class="sr-only">Join the early access list</span>
+                    <input id="email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="Enter your email" aria-required="true" required />
+                    <button type="submit" class="cta cta--compact">Get Early Access</button>
+                    <p class="form-message" id="formMessage" role="status" aria-live="polite"></p>
+                  </form>
+                                     <div class="store-inline" aria-label="Available on app stores">
+                    <span class="available-text">Available on</span>
+                    <a class="pill" id="appStoreBadge" href="#" rel="noopener" aria-label="Download on the App Store">
+                      <svg class="pill-icon" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <path fill="#fff" d="M16.365 13.323c-.03-3.237 2.646-4.783 2.769-4.86-1.515-2.211-3.87-2.514-4.705-2.55-2.005-.203-3.91 1.18-4.928 1.18-.997 0-2.575-1.156-4.24-1.123-2.182.036-4.198 1.27-5.315 3.225-2.267 3.913-.578 9.698 1.602 12.882 1.067 1.55 2.332 3.287 4.009 3.226 1.622-.063 2.231-1.04 4.186-1.04 1.934 0 2.49 1.04 4.204 1.003 1.74-.028 2.844-1.562 3.904-3.12 1.236-1.805 1.743-3.56 1.77-3.65-.039-.016-3.391-1.303-3.357-5.163z"/>
+                      </svg>
+                      <span>App Store</span>
+                    </a>
+                    <a class="pill" id="playStoreBadge" href="#" rel="noopener" aria-label="Get it on Google Play">
+                      <svg class="pill-icon" width="16" height="16" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                        <path fill="#fff" d="M1 3.27v17.46c0 .61.66.99 1.18.68l11.1-6.49L1.18 2.59C.66 2.28 1 2.66 1 3.27z"/>
+                        <path fill="#fff" d="M22.29 12.01l-3.42-1.99-3.08 2.02 3.08 2.02 3.42-2.05z"/>
+                        <path fill="#fff" d="M13.28 14.56L2.18 21.03c-.52.31-1.18-.07-1.18-.68V3.27c0-.61.66-.99 1.18-.68l11.1 6.48 3.08 2.02-3.08 2.02z" opacity=".7"/>
+                      </svg>
+                      <span>Google Play</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- inline CTAs moved into device screen -->
+        </div>
+
+        <div class="tooltip" id="whatIs" role="dialog" aria-modal="false" aria-labelledby="whatIsTitle" aria-hidden="true">
+          <h2 id="whatIsTitle">What is Perpetuate</h2>
+          <p>Perpetuate is a premium self-development app that turns disciplined action into identity. Track, reflect, and evolve — with elegance and focus.</p>
+          <button class="tooltip-close" id="tooltipClose" aria-label="Close">✕</button>
+        </div>
+      </main>
+
+      <footer class="footer" role="contentinfo">
+        <small>© <span id="year"></span> Perpetuate. All rights reserved.</small>
+      </footer>
+    </div>
+  </body>
+</html> 
